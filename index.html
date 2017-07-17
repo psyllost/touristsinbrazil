@@ -1,6 +1,7 @@
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       google.charts.load('current', {
         'packages':['geochart'],
@@ -26,6 +27,14 @@
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
         chart.draw(data, options);
+
+		 var url = "https://docs.google.com/uc?id=0B-UScEmG43cNYTl3RnNuMTNlS28&export=download";
+
+		  // Load the csv file
+		  d3.csv(url, function (error, data) {
+			// Output the first observation to the log
+			console.log(data[0]);
+		  });
       }
     </script>
   </head>
