@@ -28,10 +28,10 @@
 
         chart.draw(data, options);
 
-		 var url = "https://docs.google.com/uc?id=0B-UScEmG43cNYTl3RnNuMTNlS28&export=download";
+		 var file = "touristsDataClean";
 
 		  // Load the csv file
-		  d3.csv(url, function (error, data) {
+		  d3.csv(file, function (error, data) {
 			// Output the first observation to the log
 			console.log(data[0]);
 		  });
