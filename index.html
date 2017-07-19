@@ -11,23 +11,27 @@
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
 
+      function importCSV() {
+	var file = "touristsDataClean.csv";
+	var country_data = [['Country', 'Tourists']];
+	// Load the csv file
+	d3.csv(file, function (error, data) {
+		console.log(data.length);
+		for (i = 0; i < data.length; i++) { 
+			//if (data[i]['Year'] == '1989') {
+			country_data.push([data[i]['Country'], Number(data[i]['Count'])])
+			console.log(country_data[1]);
+			break;
+			//}else break;					
+		}
+	});
+      return country_data;
+      };
+	      
       function drawRegionsMap() {
-	      var file = "touristsDataClean.csv";
-		var country_data = [['Country', 'Tourists']];
-		  // Load the csv file
-		d3.csv(file, function (error, data) {
-			console.log(data.length);
-			for (i = 0; i < data.length; i++) { 
-				//if (data[i]['Year'] == '1989') {
-					country_data.push([data[i]['Country'], Number(data[i]['Count'])])
-					console.log(country_data[1]);
-				break;
-				//}else break;					
-			}
-		});
-			
+	  			
         var data = google.visualization.arrayToDataTable([
-          country_data
+          importCSV();
         ]);
 
         var options = {backgroundColor: '#212121'};
