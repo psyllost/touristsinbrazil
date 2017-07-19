@@ -17,7 +17,7 @@
 	// Load the csv file
 	d3.csv(file, function (error, data) {		
 		for (i = 0; i < data.length; i++) { 
-			if (data[i]['Year'] <='1989') {
+			if (data[i]['Year'] <='1989' and data[i]['Country'] not in ('Other countries', 'Not informed')) {
 				country_data.push([data[i]['Country'], Number(data[i]['Count'])]);	
 			}else break;			
 		}
