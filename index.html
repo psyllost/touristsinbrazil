@@ -20,8 +20,7 @@
 			console.log(data[i]['Year']);
 			if (data[i]['Year'] == '1989') {
 				country_data.push([data[i]['Country'], Number(data[i]['Count'])]);	
-			}
-			break;
+			}			
 		}
 		
       		google.charts.setOnLoadCallback(drawRegionsMap(country_data));
