@@ -20,7 +20,6 @@
 		for (i = 0; i < data.length; i++) { 
 			//if (data[i]['Year'] == '1989') {
 			country_data.push([data[i]['Country'], Number(data[i]['Count'])])
-			console.log(country_data[1]);
 			break;
 			//}else break;					
 		}
@@ -29,7 +28,8 @@
       };
 	      
       function drawRegionsMap() {
-	var country_data = importCSV();  			
+	var country_data = importCSV();  
+	      console.log(country_data[0]);
         var data = google.visualization.arrayToDataTable([
           country_data
         ]);
