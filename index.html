@@ -18,7 +18,8 @@
 	d3.csv(file, function (error, data) {		
 		for (i = 0; i < data.length; i++) { 
 			if (data[i]['Year'] == '1989') {
-				country_data.push([data[i]['Country'], Number(data[i]['Count'])]);					
+				country_data.push([data[i]['Country'], Number(data[i]['Count'])]);	
+			}
 		}
 	});
       return country_data;
