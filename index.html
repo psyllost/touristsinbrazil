@@ -13,13 +13,7 @@
 
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 700]
+          country_data
         ]);
 
         var options = {backgroundColor: '#212121'};
@@ -27,15 +21,20 @@
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
         chart.draw(data, options);
-
-		 var file = "touristsDataClean.csv";
-
+	
+      }
+		var file = "touristsDataClean.csv";
+		var country_data = ['Country', 'Tourists'];
 		  // Load the csv file
-		  d3.csv(file, function (error, data) {
+		d3.csv(file, function (error, data) {
 			// Output the first observation to the log
 			console.log(data[0]);
-		  });
-      }
+			for (i = 0; i < data.length; i++) { 
+				if (data[i]['Year'] == '1989') {
+					country_data.push([data[i]['Country'], Number(data[i]['Count'])])
+				}else break;					
+			}
+		});
     </script>
   </head>
   <body>
