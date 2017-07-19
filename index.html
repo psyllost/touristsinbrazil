@@ -3,13 +3,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-      
+            
       function importCSV() {
 	var file = "touristsDataClean.csv";
 	var country_data = [['Country', 'Tourists']];
@@ -42,6 +36,13 @@
         chart.draw(data, options);
 	
       }
+	    
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
       google.charts.setOnLoadCallback(drawRegionsMap);		
     </script>
   </head>
