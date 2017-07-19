@@ -15,13 +15,11 @@
 	var file = "touristsDataClean.csv";
 	var country_data = [['Country', 'Tourists']];
 	// Load the csv file
-	d3.csv(file, function (error, data) {
-		console.log(data.length);
+	d3.csv(file, function (error, data) {		
 		for (i = 0; i < data.length; i++) { 
-			//if (data[i]['Year'] == '1989') {
+			if (data[i]['Year'] == '1989') {
 			country_data.push([data[i]['Country'], Number(data[i]['Count'])])
-			break;
-			//}else break;					
+			}else break;					
 		}
 	});
       return country_data;
@@ -29,7 +27,9 @@
 	      
       function drawRegionsMap() {
 	var country_data = importCSV();  
+	      console.log(data.length);
 	      console.log(country_data[0]);
+	      console.log(country_data[1]);
         var data = google.visualization.arrayToDataTable([
           country_data
         ]);
