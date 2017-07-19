@@ -29,9 +29,9 @@
       };
 	      
       function drawRegionsMap() {
-	  			
+	var country_data = importCSV();  			
         var data = google.visualization.arrayToDataTable([
-          importCSV();
+          country_data
         ]);
 
         var options = {backgroundColor: '#212121'};
