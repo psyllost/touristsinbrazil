@@ -12,18 +12,7 @@
       google.charts.setOnLoadCallback(drawRegionsMap);
 
       function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          country_data
-        ]);
-
-        var options = {backgroundColor: '#212121'};
-
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-        chart.draw(data, options);
-	
-      }
-		var file = "touristsDataClean.csv";
+	      var file = "touristsDataClean.csv";
 		var country_data = ['Country', 'Tourists'];
 		  // Load the csv file
 		d3.csv(file, function (error, data) {
@@ -35,6 +24,18 @@
 				}else break;					
 			}
 		});
+        var data = google.visualization.arrayToDataTable([
+          country_data
+        ]);
+
+        var options = {backgroundColor: '#212121'};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+	
+      }
+		
     </script>
   </head>
   <body>
