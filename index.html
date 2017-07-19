@@ -16,14 +16,15 @@
 		var country_data = ['Country', 'Tourists'];
 		  // Load the csv file
 		d3.csv(file, function (error, data) {
-			// Output the first observation to the log
-			console.log(data[0]);
+			
 			for (i = 0; i < data.length; i++) { 
 				if (data[i]['Year'] == '1989') {
 					country_data.push([data[i]['Country'], Number(data[i]['Count'])])
 				}else break;					
 			}
 		});
+	      // Output the first observation to the log
+			console.log(country_data[0]);
         var data = google.visualization.arrayToDataTable([
           country_data
         ]);
