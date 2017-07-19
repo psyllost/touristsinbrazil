@@ -23,8 +23,7 @@
 				}else break;					
 			}
 		});
-	      // Output the first observation to the log
-			console.log(country_data[0]);
+			
         var data = google.visualization.arrayToDataTable([
           country_data
         ]);
@@ -34,6 +33,7 @@
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
         chart.draw(data, options);
+	console.log(country_data[1]);
 	
       }
 		
