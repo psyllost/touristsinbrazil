@@ -16,7 +16,7 @@
 		var country_data = [['Country', 'Tourists']];
 		  // Load the csv file
 		d3.csv(file, function (error, data) {
-			
+			console.log(data.length);
 			for (i = 0; i < data.length; i++) { 
 				//if (data[i]['Year'] == '1989') {
 					country_data.push([data[i]['Country'], Number(data[i]['Count'])])
