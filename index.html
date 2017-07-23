@@ -64,7 +64,7 @@
 		  $("a").click(function(event) {
 			var selected_year = event.target.id;
 			if (selected_year != min_year) {
-				selected_year.addClass('active');
+				$(this).addClass('active');
 				$('#'+min_year.toString()).removeClass('active');
 			}
 			importCSV(event.target.id);
