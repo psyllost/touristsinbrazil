@@ -3,9 +3,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 	    	    
       function importCSV() {
@@ -51,22 +51,28 @@
 	
       }
 	    
-      var min_year = 1989;
-	  var max_year = 2015; 
-	  for (i = min_year; i <= max_year; i++) { 
-		$("#year").append('<li id='+i+'><a href="#">'+i+'</a></li>');	
-	  }
+	  $( document ).ready(function() {
+		  var min_year = 1989;
+		  var max_year = 2015; 
+		  var str = '';
+		  for (i = min_year; i <= max_year; i++) { 
+			str += '<li id=\'' + i + '\'><a href=\'#\'>' + i + '</a></li>';	
+		  }
+    	  $('#year').append(str);
 
-      importCSV();
-  		
+		  importCSV();
+	  });
+		
     </script>
   </head>
   <body>
     <div id="regions_div" style="height: 100vh;"></div>
+	<div class="container">
 	<div class="dropup">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Year
     <span class="caret"></span></button>
     <ul id="year" class="dropdown-menu"></ul>
+	</div>
   </div>
   </body>
 </html>
